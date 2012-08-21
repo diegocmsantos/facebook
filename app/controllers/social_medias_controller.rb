@@ -22,8 +22,8 @@ class SocialMediasController < ApplicationController
 			http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 			http.use_ssl = true
 
-			req = Net::HTTP::Get.new(url.request_uri)
-			res = http.request(req)
+			#req = Net::HTTP::Get.new(url.request_uri)
+			res = http.request_get(url.path + '?' + url.query)
 			puts res.body
 
 			@access_token = @code
