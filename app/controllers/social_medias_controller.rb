@@ -27,7 +27,7 @@ class SocialMediasController < ApplicationController
 			http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 			http.use_ssl = true
 
-			res = http.request_get(url.path + '?' + url.query)
+			res = http.get_response(url.path + '?' + url.query)
 			@retorno = res.body.is_a? String
 
 	    	render "face"
