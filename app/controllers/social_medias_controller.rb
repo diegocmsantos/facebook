@@ -26,7 +26,7 @@ class SocialMediasController < ApplicationController
 			res = http.request_get(url.path + '?' + url.query)
 			puts res.body
 
-			@access_token = res.body
+			@access_token = res.body.delete "access_token=" "&expires="
 			#@ret = resp
 			#puts @access_token
 	    	#render "face"
