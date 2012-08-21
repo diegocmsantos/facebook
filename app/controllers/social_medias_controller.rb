@@ -26,15 +26,9 @@ class SocialMediasController < ApplicationController
 			res = http.request_get(url.path + '?' + url.query)
 			@retorno = res.body
 
-			at = res.body.delete "access_token=" "&expires="
-			expires = at.scan(/\d+/)
-			@access_token = at.delete expires.first
-			#@ret = resp
-			#puts @access_token
-	    	#render "face"
-		end
-	    if @access_token
-	    	flash[:success] = "error!"
+			at = res.body.split "&"
+			@access_token = at.first.delete "access_token="
+			
 	    	@ret = @access_token
 	    	render "face"
 	    end
