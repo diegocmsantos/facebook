@@ -28,7 +28,7 @@ class SocialMediasController < ApplicationController
 
 			at = res.body.delete "access_token=" "&expires="
 			expires = at.scan(/\d+/)
-			@access_token = at.delete expires
+			@access_token = at.delete expires.first
 			#@ret = resp
 			#puts @access_token
 	    	#render "face"
