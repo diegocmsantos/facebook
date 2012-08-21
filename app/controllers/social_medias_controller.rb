@@ -21,7 +21,7 @@ class SocialMediasController < ApplicationController
 
 			at = res.body.split "&"
 			#@access_token = at.first.delete "access_token="
-			@access_token = at.first
+			@access_token = at.first.delete "access_token="
 			@retorno = res.body
 			
 	    	render "face"
