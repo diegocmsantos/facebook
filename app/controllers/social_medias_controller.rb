@@ -9,8 +9,7 @@ class SocialMediasController < ApplicationController
 		require 'uri'
 
 		@code = params[:code]
-		@access_token = params[:access_token]
-	    if @code && !@access_token
+	    if @code
 
 			url = URI.parse("https://graph.facebook.com/oauth/access_token?client_id=221499501259361&redirect_uri=http%3A%2F%2Ffloating-meadow-2521.herokuapp.com%2Fsocial_medias%2Fgetaccesstoken&client_secret=81c8de19c6f7e93d771dcf1dfd0d0eae&code=" + @code)
 			http = Net::HTTP.new(url.host, url.port)
@@ -20,8 +19,9 @@ class SocialMediasController < ApplicationController
 			res = http.request_get(url.path + '?' + url.query)
 			
 
-			#at = res.body.split "&"
+			at = res.body.split "&"
 			#@access_token = at.first.delete "access_token="
+			@access_token = at.first
 			@retorno = res.body
 			
 	    	render "face"
