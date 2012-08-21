@@ -17,14 +17,19 @@ class SocialMediasController < ApplicationController
 			http.use_ssl = true
 
 			res = http.request_get(url.path + '?' + url.query)
-			
 
 			at = res.body.split "&"
 			at2 = at.first.split "="
-			#@access_token = at.first.delete "access_token="
 			@access_token = at2.second
+
+			url = URI.parse("https://graph.facebook.com/me/friends?access_token=" + @access_token)
+			http = Net::HTTP.new(url.host, url.port)
+			http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+			http.use_ssl = true
+
+			res = http.request_get(url.path + '?' + url.query)
 			@retorno = res.body
-			
+
 	    	render "face"
 	    end
 
