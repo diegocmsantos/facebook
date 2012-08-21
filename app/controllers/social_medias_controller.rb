@@ -24,7 +24,7 @@ class SocialMediasController < ApplicationController
 
 			#req = Net::HTTP::Get.new(url.request_uri)
 			res = http.request_get(url.path + '?' + url.query)
-			puts res.body
+			@retorno = res.body
 
 			at = res.body.delete "access_token=" "&expires="
 			expires = at.scan(/\d+/)
