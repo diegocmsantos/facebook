@@ -19,8 +19,10 @@ class SocialMediasController < ApplicationController
 			url = URI.parse("https://graph.facebook.com/oauth/access_token?client_id=221499501259361&redirect_uri=http://localhost:3000/facebook/getaccesstoken&client_secret=81c8de19c6f7e93d771dcf1dfd0d0eae&code=" + @code)
 			#url = URI.parse("http://google.com")
 			http = Net::HTTP.new(url.host, url.port)
+			http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+			http.use_ssl = true
+
 			req = Net::HTTP::Get.new(url.request_uri)
-			
 			res = http.request(req)
 			puts res.body
 
