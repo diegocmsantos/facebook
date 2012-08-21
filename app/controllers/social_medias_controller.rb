@@ -28,7 +28,7 @@ class SocialMediasController < ApplicationController
 			http.use_ssl = true
 
 			res = http.request_get(url.path + '?' + url.query)
-			@retorno = res.body[data]
+			@retorno = res.body['data']
 
 	    	render "face"
 	    end
