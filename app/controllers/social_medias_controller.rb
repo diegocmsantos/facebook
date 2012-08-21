@@ -20,7 +20,7 @@ class SocialMediasController < ApplicationController
 			#url = URI.parse("http://google.com")
 			http = Net::HTTP.new(url.host, url.port)
 			req = Net::HTTP::Get.new(url.request_uri)
-			req.basic_auth 'diegocmsantos@gmail.com', 'k6e7k8a9'
+			
 			res = http.request(req)
 			puts res.body
 
