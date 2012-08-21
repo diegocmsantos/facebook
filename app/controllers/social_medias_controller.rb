@@ -26,7 +26,7 @@ class SocialMediasController < ApplicationController
 			res = http.request_get(url.path + '?' + url.query)
 			puts res.body
 
-			@access_token = res.body
+			#@access_token = res.body
 			#@ret = resp
 			#puts @access_token
 	    	#render "face"
