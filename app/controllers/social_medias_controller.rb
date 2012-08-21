@@ -18,11 +18,11 @@ class SocialMediasController < ApplicationController
 			http.use_ssl = true
 
 			res = http.request_get(url.path + '?' + url.query)
-			@retorno = res.body
+			
 
 			#at = res.body.split "&"
 			#@access_token = at.first.delete "access_token="
-			@access_token = res.body
+			@retorno = res.body
 			
 	    	render "face"
 	    end
