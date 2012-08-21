@@ -1,7 +1,7 @@
 class SocialMediasController < ApplicationController
 
 	def sendToFacebook
-		redirect_to "https://www.facebook.com/dialog/oauth?client_id=221499501259361&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fsocial_medias%2Fgetaccesstoken&scope=user_photos,user_relationships&state=teste"
+		redirect_to "https://www.facebook.com/dialog/oauth?client_id=221499501259361&redirect_uri=http%3A%2F%floating-meadow-2521.herokuapp.com%2Fsocial_medias%2Fgetaccesstoken&scope=user_photos,user_relationships&state=teste"
 	end
 
 	def getAccessToken
