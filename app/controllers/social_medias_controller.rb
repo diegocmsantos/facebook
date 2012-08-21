@@ -9,8 +9,8 @@ class SocialMediasController < ApplicationController
 		require 'uri'
 
 		@code = params[:code]
-		#@access_token = params[:access_token]
-	    if @code
+		@access_token = params[:access_token]
+	    if @code && !@access_token
 			# Handle a successful save.
 			flash[:success] = "ok!"
 			@ret = @code
