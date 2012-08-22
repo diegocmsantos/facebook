@@ -8,7 +8,7 @@ class SocialMediasController < ApplicationController
 	end
 
 	def sendToFacebook
-		redirect_to "https://www.facebook.com/dialog/oauth?client_id=221499501259361&redirect_uri=" + LOCALHOST_REDIRECT_URI + "&scope=user_photos,user_relationships&state=teste"
+		redirect_to "https://www.facebook.com/dialog/oauth?client_id=221499501259361&redirect_uri=" + SERVER_REDIRECT_URI + "&scope=user_photos,user_relationships&state=teste"
 	end
 
 	def getAccessToken
@@ -18,7 +18,7 @@ class SocialMediasController < ApplicationController
 		@code = params[:code]
 	    if @code
 
-			url = URI.parse("https://graph.facebook.com/oauth/access_token?client_id=221499501259361&redirect_uri=" + LOCALHOST_REDIRECT_URI + "&client_secret=81c8de19c6f7e93d771dcf1dfd0d0eae&code=" + @code)
+			url = URI.parse("https://graph.facebook.com/oauth/access_token?client_id=221499501259361&redirect_uri=" + SERVER_REDIRECT_URI + "&client_secret=81c8de19c6f7e93d771dcf1dfd0d0eae&code=" + @code)
 			http = Net::HTTP.new(url.host, url.port)
 			http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 			http.use_ssl = true
