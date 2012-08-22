@@ -47,7 +47,7 @@ class SocialMediasController < ApplicationController
 			# end
 
 			@full_name = result["first_name"] + " " + result["last_name"]
-			@location = result["location"]["name"]
+			# @location = result["location"]["name"]
 			@link = result["link"]
 			@retorno = result["data"]
 
