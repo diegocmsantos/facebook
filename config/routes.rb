@@ -56,6 +56,7 @@ Facebook::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
+  get 'social_medias/face'                       => 'social_medias#face'
   get 'social_medias/sendtofacebook'             => 'social_medias#sendToFacebook'
   get 'social_medias/getaccesstoken'             => 'social_medias#getAccessToken'
   get 'social_medias/listfriends'                => 'social_medias#listFriends'

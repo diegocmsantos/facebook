@@ -8,6 +8,8 @@ development:
   database: face_dev
   pool: 5
   timeout: 5000
+  username: diegoPost
+  password: 123456789
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -17,9 +19,13 @@ test:
   database: face_test
   pool: 5
   timeout: 5000
+  username: diegoPost
+  password: 123456789
 
 production:
   adapter: postgresql
   database: face_prod
   pool: 5
   timeout: 5000
+  username: diegoPost
+  password: 123456789
