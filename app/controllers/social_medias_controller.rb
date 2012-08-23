@@ -14,6 +14,8 @@ class SocialMediasController < ApplicationController
 	def getAccessToken
 		require 'net/http'
 		require 'uri'
+		require 'open-uri'
+		require 'json'
 
 		@code = params[:code]
 	    if @code
@@ -35,8 +37,7 @@ class SocialMediasController < ApplicationController
 			# http.use_ssl = true
 			# res = http.request_get(url.path + '?' + url.query)
 
-			require 'open-uri'
-			require 'json'
+			
 			result = JSON.parse(open("https://graph.facebook.com/me?access_token=" + @access_token).read)
 
 			# @retorno = []
