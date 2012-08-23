@@ -46,7 +46,7 @@ class SocialMediasController < ApplicationController
 			# 		@retorno << info["name"]
 			# 	end
 			# end
-			@username = result[:username]
+			@username = result["username"]
 			@full_name = result["first_name"] + " " + result["last_name"]
 			#@location = result["location"]["name"]
 			@link = result["link"]
