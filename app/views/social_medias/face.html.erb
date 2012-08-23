@@ -2,3 +2,10 @@
 <p>Hi,</p>
 <p>My name's <%= @full_name %> and i'm from <%= @location %></p>
 <p>Please, send me a message on my  <a href="<%= @link %>">facebook</a></p>
+
+<br/>
+<br/>
+<p>Here's my friends list:</p>
+<% @friends.each do |friend| %>
+	<%= friend["name"] %>
+<% end %>
