@@ -6,6 +6,11 @@
 <br/>
 <br/>
 <p>Here's my friends list:</p>
+<ul>
 <% @friends.each do |friend| %>
-	<%= friend["name"] %>
+	<li>
+		<img src="http://graph.facebook.com/<%= friend["id"] %>/picture" />
+		<%= friend["name"] %>
+	</li>
 <% end %>
+</ul>
