@@ -1,6 +1,6 @@
 <img src="https://graph.facebook.com/<%= @username %>/picture"/>
 <p>Hi,</p>
-<p>My name's <%= @full_name %> and i'm from <%= @location %></p>
+<p>My name's <%= @full_name %> <% if @location %> and i'm from <%= @location %> <% end %></p>
 <p>Please, send me a message on my  <a href="<%= @link %>">facebook</a></p>
 
 <br/>
