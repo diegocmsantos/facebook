@@ -31,7 +31,7 @@ class SocialMediasController < ApplicationController
 			at2 = at.first.split "="
 			@access_token = at2.second
 
-			@friends = JSON.parse(open("https://graph.facebook.com/me/friends?access_token=" + @access_token).read)
+			@friends = JSON.parse(open("https://graph.facebook.com/me/friends?access_token=" + @access_token).read)["data"]
 			# http = Net::HTTP.new(url.host, url.port)
 			# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 			# http.use_ssl = true
