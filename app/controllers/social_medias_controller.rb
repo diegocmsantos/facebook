@@ -51,6 +51,8 @@ class SocialMediasController < ApplicationController
 			if result["location"]
 				if result["location"]["name"]
 					@location = result["location"]["name"]
+				end
+			end
 			@link = result["link"]
 			@retorno = result["data"]
 
